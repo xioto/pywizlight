@@ -8,7 +8,9 @@
 [![Lint](https://github.com/sbidy/pywizlight/actions/workflows/lint.yml/badge.svg)](https://github.com/sbidy/pywizlight/actions/workflows/lint.yml)
 [![codecov][code-cover-shield]][code-coverage]
 
-
+# Changes
+ * CLI when turning on only asks for IP
+ 
 # pywizlight
 
 A Python connector for [WiZ](https://www.wizconnected.com/en/consumer/) devices.
