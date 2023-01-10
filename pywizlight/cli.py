@@ -46,26 +46,12 @@ async def discover(b: str) -> None:
 @main.command("on")
 @coro
 @click.option("--ip", prompt="IP address of the bulb", help="IP address of the bulb.")
-@click.option(
-    "--k",
-    prompt="Kelvin for temperature.",
-    help="Kelvin value (1000-8000) for turn on. Default 3000",
-    default=3000,
-    type=int,
-)
-@click.option(
-    "--brightness",
-    prompt="Set the brightness value 0-255",
-    help="Brightness for turn on. Default 128",
-    default=128,
-    type=int,
-)
-async def turn_on(ip: str, k: int, brightness: int) -> None:
+async def turn_on(ip: str) -> None:
     """Turn a given bulb on."""
     click.echo(f"Turning on {ip}")
     bulb = wizlight(ip)
-    if bulb and 1000 <= k <= 6800 and 0 <= brightness <= 255:
-        await bulb.turn_on(PilotBuilder(colortemp=k, brightness=brightness))
+    if True:
+        await bulb.turn_on(PilotBuilder())
     else:
         click.echo("Error - values are not correct. Type --help for help.")
     await bulb.async_close()
